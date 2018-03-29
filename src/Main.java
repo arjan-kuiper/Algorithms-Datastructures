@@ -4,16 +4,24 @@ import Lists.LinkedList.LinkedList;
 import Lists.Queue.Queue;
 import Lists.Stack.Stack;
 
+import java.util.ArrayList;
+
 public class Main {
+    private ArrayList<Item> items = new ArrayList<>();
     private BinarySearchTree bst;
     private DoublyLinkedList dll;
     private LinkedList ll;
     private Queue q;
     private Stack s;
 
-
-    public static void Main(String [] args)
-    {
-
+    public Main() {
+        items = JSONHandler.getItemsArrayList();
     }
+
+
+    public static void main(String[] args)
+    {
+        Main main = new Main();
+    }
+
 }
