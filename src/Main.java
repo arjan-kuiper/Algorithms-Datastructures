@@ -16,12 +16,23 @@ public class Main {
 
     public Main() {
         items = JSONHandler.getItemsArrayList();
+        populateLists();
     }
 
 
     public static void main(String[] args)
     {
         Main main = new Main();
+    }
+
+    // Method to easily populate all the created collections.
+    private void populateLists()
+    {
+        for(Item item : items)
+        {
+            // <COLLECTION>.add(item);
+        }
+        System.out.println(items.size() + " Entries");
     }
 
 }
