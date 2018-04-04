@@ -15,8 +15,9 @@
 - [x] BubbleSort TEST
 - [x] InsertionSort
 - [x] InsertionSort TEST
-- [x] MinMax
 - [x] QuickSort
 - [x] QuickSort TEST
 - [x] SequentialSearch
 - [x] SequentialSearch TEST
+- [ ] OPTIONEEL - MinMax
+- [ ] OPTIONEEL - MinMax TEST

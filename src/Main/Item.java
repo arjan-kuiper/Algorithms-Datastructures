@@ -1,8 +1,8 @@
-/*
-Class Item
+package Main;/*
+Class Main.Item
 Summary:
-    The Item class contains a collection of values based on the LEGO Dataset.
-    Each Item object is a single product from the collection file.
+    The Main.Item class contains a collection of values based on the LEGO Dataset.
+    Each Main.Item object is a single product from the collection file.
 
  */
 
