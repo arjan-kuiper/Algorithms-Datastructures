@@ -9,7 +9,7 @@ Summary:
 import org.json.simple.JSONObject;
 
 public class Item {
-    private String itemNr;
+    private int itemNr;
     private String itemName;
     private int year;
     private String theme;
@@ -23,7 +23,7 @@ public class Item {
     // Constructor to set the values of certain items.
     public Item(JSONObject item)
     {
-        this.itemNr = String.valueOf(item.get("Item_Number"));
+        this.itemNr = Integer.parseInt(String.valueOf(item.get("Item_Number")));
         this.itemName = (String)item.get("Name");
         this.year = Integer.parseInt(String.valueOf(item.get("Year")));
         this.theme = (String)item.get("Theme");
@@ -65,7 +65,7 @@ public class Item {
 
 
     // Getter methods
-    public String getItemNr(){ return itemNr; }
+    public int getItemNr(){ return itemNr; }
     public String getItemName() { return itemName; }
     public int getYear() { return year; }
     public String getTheme() { return theme; }

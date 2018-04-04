@@ -1,0 +1,25 @@
+# Finished Lists/SortingAlgorithms
+- [ ] BinarySearchTree
+- [ ] BinarySearchTree TEST
+- [ ] DoublyLinkedList
+- [ ] DoublyLinkedList TEST
+- [ ] LinkedList
+- [ ] LinkedList TEST
+- [ ] Queue
+- [ ] Queue TEST
+- [ ] Stack 
+- [ ] Stack TEST
+- [x] BinarySearch
+- [x] BinarySearch TEST
+- [x] BubbleSort
+- [ ] BubbleSort TEST
+- [x] InsertionSort
+- [x] InsertionSort TEST
+- [ ] MinMax
+- [ ] MinMax TEST
+- [x] QuickSort
+- [ ] QuickSort TEST
+- [x] SequentialSearch
+- [ ] SequentialSearch TEST
+- [ ] SmartBubbleSort
+- [ ] SmartBubbleSort TEST

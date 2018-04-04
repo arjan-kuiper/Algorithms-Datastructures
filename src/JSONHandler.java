@@ -35,8 +35,13 @@ public final class JSONHandler {
                 JSONObject obj = (JSONObject)item;
                 // Add a new instance of Item to the items collection.
                 // The constructor of Item will take care of the logic.
-                items.add(new Item(obj));
-                System.out.println(obj.get("Name") + "  Has been added.");
+                try{
+                    int itemId = Integer.parseInt((String.valueOf(obj.get("Item_Number"))));
+                    items.add(new Item(obj));
+                    System.out.println(obj.get("Name") + "  Has been added.");
+                }catch(Exception e){
+                    System.out.println(obj.get("Name") + "  Skipped (Invalid ID).");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
