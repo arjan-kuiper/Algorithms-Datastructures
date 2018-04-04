@@ -3,6 +3,7 @@ import Lists.DoublyLinkedList.DoublyLinkedList;
 import Lists.LinkedList.LinkedList;
 import Lists.Queue.Queue;
 import Lists.Stack.Stack;
+import SortingAlgorithms.MinMax.MinMax;
 import SortingAlgorithms.QuickSort.QuickSort;
 import SortingAlgorithms.SequentialSearch.SequentialSearch;
 
@@ -47,7 +48,7 @@ public class Main {
         System.out.println("");
 
         // TODO - Test below here
-
+        System.out.println(MinMax.generate(0, 10));
     }
 
     private Item getItemById(int id)
