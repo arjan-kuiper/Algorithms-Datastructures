@@ -1,4 +1,6 @@
-package Main;/*
+package Main;
+
+/*
 Class Main.Item
 Summary:
     The Main.Item class contains a collection of values based on the LEGO Dataset.
