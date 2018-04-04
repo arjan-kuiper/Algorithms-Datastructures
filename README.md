@@ -12,11 +12,11 @@
 - [x] BinarySearch
 - [x] BinarySearch TEST
 - [x] BubbleSort
-- [ ] BubbleSort TEST
+- [x] BubbleSort TEST
 - [x] InsertionSort
 - [x] InsertionSort TEST
 - [x] MinMax
 - [x] QuickSort
-- [ ] QuickSort TEST
+- [x] QuickSort TEST
 - [x] SequentialSearch
-- [ ] SequentialSearch TEST
+- [x] SequentialSearch TEST

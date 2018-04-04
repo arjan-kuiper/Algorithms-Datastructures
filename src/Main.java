@@ -3,9 +3,17 @@ import Lists.DoublyLinkedList.DoublyLinkedList;
 import Lists.LinkedList.LinkedList;
 import Lists.Queue.Queue;
 import Lists.Stack.Stack;
+import SortingAlgorithms.BinarySearch.BinarySearchTest;
+import SortingAlgorithms.BubbleSort.BubbleSortTest;
 import SortingAlgorithms.MinMax.MinMax;
 import SortingAlgorithms.QuickSort.QuickSort;
+import SortingAlgorithms.QuickSort.QuickSortTest;
 import SortingAlgorithms.SequentialSearch.SequentialSearch;
+import junit.framework.Test;
+import junit.framework.TestResult;
+import org.junit.internal.TextListener;
+import org.junit.runner.JUnitCore;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
@@ -48,7 +56,9 @@ public class Main {
         System.out.println("");
 
         // TODO - Test below here
-        System.out.println(MinMax.generate(0, 10));
+        JUnitCore junitCore = new JUnitCore();
+        junitCore.addListener(new TextListener(System.out));
+        //junitCore.run(<someclass>.class);
     }
 
     private Item getItemById(int id)
