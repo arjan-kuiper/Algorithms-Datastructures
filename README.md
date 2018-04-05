@@ -1,6 +1,6 @@
 # Finished Lists/SortingAlgorithms
-- [ ] BinarySearchTree
-- [ ] BinarySearchTree TEST
+- [x] BinarySearchTree
+- [x] BinarySearchTree TEST
 - [ ] DoublyLinkedList
 - [ ] DoublyLinkedList TEST
 - [X] LinkedList
