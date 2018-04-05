@@ -3,8 +3,8 @@
 - [ ] BinarySearchTree TEST
 - [ ] DoublyLinkedList
 - [ ] DoublyLinkedList TEST
-- [ ] LinkedList
-- [ ] LinkedList TEST
+- [X] LinkedList
+- [X] LinkedList TEST
 - [ ] Queue
 - [ ] Queue TEST
 - [ ] Stack 
