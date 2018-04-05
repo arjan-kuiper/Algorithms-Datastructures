@@ -23,4 +23,13 @@ public class BinarySearchTreeTest {
         System.out.println("All LEGO items were added to an ids array");
     }
 
+    @Test
+    public void insert(){
+        // TODO - With the LEGO dataset
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        bst.insert(20);
+        assertTrue(bst.find(20));
+        bst.delete(20);
+        assertFalse(bst.find(20));
+    }
 }
