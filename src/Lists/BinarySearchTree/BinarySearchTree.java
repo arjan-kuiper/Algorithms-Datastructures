@@ -75,6 +75,33 @@ public class BinarySearchTree<T extends Comparable<T>> {
         else return 1 + Math.max(height(node.left), height(node.right));
     }
 
+    public int countLeaves(){
+        return countLeaves(root);
+    }
+
+    private int countLeaves(Node<T> node){
+        if(node == null) return 0;
+        else if(node.left == null && node.right == null) return 1;
+        else return countLeaves(node.left) + countLeaves(node.right);
+    }
+
+    public int width(){
+        int max = 0;
+        for(int i = 0; i <= height(); i++){
+            int tmp = width(root, i);
+            if(tmp > max){
+                max = tmp;
+            }
+        }
+        return max;
+    }
+
+    private int width(Node<T> node, int depth){
+        if(node == null) return 0;
+        else if(depth == 0) return 1;
+        else return width(node.left, depth - 1) + width(node.right, depth - 1);
+    }
+
     private int compare(T x, T y){
         if(comparator == null) return x.compareTo(y);
         else return comparator.compare(x, y);

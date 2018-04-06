@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class BinarySearchTreeTest {
+public class BinarySearchTreeTest<T extends Comparable<T>> {
 
     private ArrayList<Item> items = new ArrayList<>();
     private int[] ids;
@@ -27,9 +27,8 @@ public class BinarySearchTreeTest {
     public void insert(){
         // TODO - With the LEGO dataset
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-        bst.insert(20);
-        assertTrue(bst.find(20));
-        bst.delete(20);
-        assertFalse(bst.find(20));
+
+        bst.insert(ids[50]);
+        assertTrue(bst.find(ids[50]));
     }
 }
