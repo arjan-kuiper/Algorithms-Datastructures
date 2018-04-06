@@ -102,6 +102,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
         else return width(node.left, depth - 1) + width(node.right, depth - 1);
     }
 
+    public void clear(){
+        root = null; // The rest gets taken care of by Java's garbage collector
+    }
+
     private int compare(T x, T y){
         if(comparator == null) return x.compareTo(y);
         else return comparator.compare(x, y);
