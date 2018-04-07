@@ -93,14 +93,7 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean containsAll(Collection<?> collection) {
-        for (Object obj: collection) {
-            if (!contains(obj)) {
-                return false;
-            }
-        }
-        return true;
-    }
+    public boolean containsAll(Collection<?> collection) { throw new UnsupportedOperationException(); }
 
     @Override
     public E get(int index) {
@@ -211,7 +204,7 @@ public class LinkedList<E> implements List<E> {
             prevNode.next = prevNode.next.next;
         }
         size--;
-        // As a curtesy of kindness one shall be in a state to catch the fallen brother.
+        // As a courtesy of kindness one shall be in a state to catch the fallen brother.
         return removeable;
     }
 
