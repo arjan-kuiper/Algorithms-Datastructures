@@ -1,14 +1,14 @@
 # Finished Lists/SortingAlgorithms
 - [ ] BinarySearchTree
 - [ ] BinarySearchTree TEST
-- [ ] DoublyLinkedList
-- [ ] DoublyLinkedList TEST
+- [X] DoublyLinkedList
+- [X] DoublyLinkedList TEST
 - [X] LinkedList
 - [X] LinkedList TEST
 - [ ] Queue
 - [ ] Queue TEST
-- [ ] Stack 
-- [ ] Stack TEST
+- [O] Stack 
+- [O] Stack TEST
 - [x] BinarySearch
 - [x] BinarySearch TEST
 - [x] BubbleSort
@@ -21,3 +21,11 @@
 - [x] SequentialSearch TEST
 - [ ] OPTIONEEL - MinMax
 - [ ] OPTIONEEL - MinMax TEST
+
+
+# Required Ant build options
+- [ ] Ant Build file
+- [ ] Ant Library references
+- [ ] Ant auto-compile / run tests
+- [ ] Ant auto-run predefined sorting algorithms
+- [ ] Include ref dataset (?)

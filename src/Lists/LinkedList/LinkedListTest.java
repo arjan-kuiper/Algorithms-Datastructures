@@ -11,21 +11,16 @@ import static org.junit.Assert.*;
 
 public class LinkedListTest {
     private ArrayList<Item> items = new ArrayList<>();
-    private int[] ids;
 
     @Before
     public void initialize()
     {
         items = JSONHandler.getItemsArrayList();
-        ids = new int[items.size()];
-        for(int i = 0; i < ids.length; i++){
-            ids[i] = items.get(i).getItemNr();
-        }
         System.out.println("All LEGO items were added to an ids array");
     }
 
     @Test
-    public void addNodes() throws Exception {
+    public void addNodes() {
         LinkedList<Object> linkedList = new LinkedList<>();
         linkedList.clear();
         linkedList.addAll(items);
@@ -35,7 +30,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void clearLinkedList() throws Exception{
+    public void clearLinkedList() {
         LinkedList<Object> linkedList = new LinkedList<>();
         linkedList.add(items.get(500));
         linkedList.add(items.get(2234));
@@ -46,7 +41,19 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removeObject() throws Exception {
+    public void isEmpty() {
+        LinkedList<Object> linkedList = new LinkedList<>();
+
+        assertTrue(linkedList.isEmpty());
+        linkedList.add(items.get(500));
+        linkedList.add(items.get(2234));
+        linkedList.add(items.get(0));
+        assertFalse(linkedList.isEmpty());
+
+    }
+
+    @Test
+    public void removeObject() {
         LinkedList<Object> linkedList = new LinkedList<>();
         linkedList.add(items.get(500));
         linkedList.add(items.get(2234));

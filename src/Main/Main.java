@@ -5,9 +5,6 @@ import Lists.DoublyLinkedList.DoublyLinkedList;
 import Lists.LinkedList.LinkedList;
 import Lists.Queue.Queue;
 import Lists.Stack.Stack;
-import SortingAlgorithms.QuickSort.QuickSort;
-import org.junit.internal.TextListener;
-import org.junit.runner.JUnitCore;
 
 import java.util.ArrayList;
 
