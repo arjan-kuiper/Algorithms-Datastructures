@@ -67,14 +67,15 @@ public class DoublyLinkedList<E> implements List<E>{
 
     @Override
     public void add(int index, E element) {
-        size++;
         if(index == 0)
         {
             head = new Node(element, head);
         }else{
-            getNode(index -1).next = new Node(element, getNode(index));
+            Node cNode = getNode(index);
+            cNode.prev = cNode;
+            cNode.next = new Node(element, getNode(index), cNode);
         }
-
+        size++;
     }
 
     @Override
@@ -99,7 +100,6 @@ public class DoublyLinkedList<E> implements List<E>{
         }
         size--;
         return removeable;
-        //Volgens internet hoort het 'true' of 'false' te returnen :/ waarom doet ie dit?
     }
 
     @Override
@@ -237,14 +237,5 @@ public class DoublyLinkedList<E> implements List<E>{
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException();
-    }
-
-    public static void main(String[] args){
-        ArrayList<Item> items = JSONHandler.getItemsArrayList();
-        DoublyLinkedList<Item> dll = new DoublyLinkedList<>();
-        dll.addAll(items);
-        dll.get(100);
-        dll.get(2000);
-        System.out.println("Added:" + dll.size);
     }
 }

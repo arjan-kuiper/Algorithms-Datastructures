@@ -30,6 +30,23 @@ public class DoublyLinkedListTest {
     }
 
     @Test
+    public void addItemOnIndex() {
+        DoublyLinkedList<Item> dll = new DoublyLinkedList<>();
+        dll.add(items.get(500));
+        dll.add(items.get(2234));
+
+        dll.add(0, items.get(233));
+        assertEquals(items.get(233), dll.get(0));
+        assertEquals(items.get(500), dll.get(1));
+
+        dll.add(2, items.get(2000));
+        //assertEquals(items.get(500), dll.get(1));
+
+    }
+
+
+
+    @Test
     public void clearList() {
         DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
         dll.add(items.get(500));
@@ -50,14 +67,49 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void remove() {
+    public void removeByObject() {
         DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
         assertEquals(0, dll.size());
         dll.add(items.get(0));
         dll.add(items.get(500));
-        dll.remove(1);
+        dll.add(items.get(404));
+        dll.add(items.get(533));
+        dll.add(items.get(2000));
+        //Test if index 0 can be removed without breaking the code.
         dll.remove(items.get(0));
-        assertTrue(dll.isEmpty());
+        assertEquals(4, dll.size());
+        //Test if the last object can be removed without breaking the code.
+        dll.remove(items.get(2000));
+        assertEquals(3, dll.size());
+
+        //Testing if anything in between the first and last object can be removed without breaking the code.
+        dll.remove(items.get(404));
+        assertEquals(2, dll.size());
+    }
+
+    @Test
+    public void removeByIndex() {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        assertEquals(0, dll.size());
+        dll.add(items.get(0));
+        dll.add(items.get(500));
+        dll.add(items.get(404));
+        dll.add(items.get(533));
+        dll.add(items.get(2000));
+        dll.remove(0);
+        assertEquals(4, dll.size());
+        dll.remove(3);
+        assertEquals(3, dll.size());
+        dll.remove(2);
+        assertEquals(2, dll.size());
+
+    }
+
+    @Test
+    public void removeNonExistingObject()
+    {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        assertFalse(dll.remove(items.get(500)));
     }
 
     @Test
@@ -66,6 +118,41 @@ public class DoublyLinkedListTest {
         dll.add(items.get(500));
         dll.add(items.get(2234));
         dll.add(items.get(0));
+
+        assertEquals(0, dll.indexOf(items.get(500)));
         assertEquals(1, dll.indexOf(items.get(2234)));
+        assertEquals(2, dll.indexOf(items.get(0)));
+    }
+
+    @Test
+    public void size() {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        dll.add(items.get(500));
+        dll.add(items.get(2234));
+        dll.add(items.get(0));
+        assertEquals(3, dll.size());
+    }
+
+    @Test
+    public void contains()
+    {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        assertFalse(dll.contains(items.get(500)));
+        dll.add(items.get(500));
+        assertTrue(dll.contains(items.get(500)));
+    }
+
+    @Test
+    public void addAll()
+    {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        dll.addAll(items);
+        assertEquals(items.size(), dll.size());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testGetNodeIndexOutOfBoundsException() {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        dll.get(2);
     }
 }
