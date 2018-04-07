@@ -1,14 +1,14 @@
 # Finished Lists/SortingAlgorithms
-- [ ] BinarySearchTree
-- [ ] BinarySearchTree TEST
-- [X] DoublyLinkedList
-- [X] DoublyLinkedList TEST
+- [x] BinarySearchTree
+- [x] BinarySearchTree TEST
+- [x] DoublyLinkedList
+- [x] DoublyLinkedList TEST
 - [X] LinkedList
 - [X] LinkedList TEST
 - [ ] Queue
 - [ ] Queue TEST
-- [O] Stack 
-- [O] Stack TEST
+- [x] Stack 
+- [x] Stack TEST
 - [x] BinarySearch
 - [x] BinarySearch TEST
 - [x] BubbleSort
