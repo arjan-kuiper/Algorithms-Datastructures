@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 import static org.junit.Assert.*;
 
@@ -37,6 +38,12 @@ public class StackTest {
 
     }
 
+    @Test(expected = EmptyStackException.class)
+    public void testEmptyStackException() {
+        Stack<Item> stack = new Stack<>();
+        stack.peek();
+    }
+
     @Test
     public void popStack(){
         Stack<Item> stack = new Stack<>();
@@ -52,5 +59,13 @@ public class StackTest {
         stack.push(items.get(500));
         stack.push(items.get(404));
         assertEquals(1, stack.search(items.get(500)));
+    }
+
+    @Test
+    public void searchNonExisting(){
+        Stack<Item> stack = new Stack<>();
+        stack.push(items.get(500));
+        stack.push(items.get(400));
+        assertEquals(-1, stack.search(items.get(404)));
     }
 }

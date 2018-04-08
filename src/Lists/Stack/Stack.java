@@ -70,16 +70,18 @@ public class Stack<E> {
     {
         StackNode cNode = top;
         int count = 0;
+
+
         // Check whether you found the object reference, also checks if you haven't hit the bottom of the stack.
-        while(cNode.data != obj && cNode.data != null)
+        while(cNode.prevNode != null || cNode.data == obj)
         {
-            cNode = top.prevNode;
+            if(cNode.data == obj)
+            {
+                return count;
+            }
+            cNode = cNode.prevNode;
             count ++;
         }
-
-        if(cNode != null)
-            return count;
-        // if cNode == null
         return -1;
     }
 }

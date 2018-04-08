@@ -8,7 +8,7 @@ import java.util.*;
 
 public class DoublyLinkedList<E> implements List<E>{
     private Node head;
-    private Node tail ;
+    private Node tail;
     private int size = 0;
 
 
@@ -71,9 +71,12 @@ public class DoublyLinkedList<E> implements List<E>{
         {
             head = new Node(element, head);
         }else{
+            Node prevNode = getNode(index).prev;
             Node cNode = getNode(index);
-            cNode.prev = cNode;
-            cNode.next = new Node(element, getNode(index), cNode);
+
+            Node nNode = new Node(element, cNode, prevNode);
+            prevNode.next = nNode;
+            cNode.prev = nNode;
         }
         size++;
     }

@@ -76,10 +76,6 @@ public class LinkedList<E> implements List<E> {
         return flag;
     }
 
-    @Override
-    public boolean addAll(int index, Collection<? extends E> collection) {
-        throw new UnsupportedOperationException();
-    }
 
     @Override
     public void clear() {
@@ -92,8 +88,6 @@ public class LinkedList<E> implements List<E> {
         return indexOf(obj) != -1;
     }
 
-    @Override
-    public boolean containsAll(Collection<?> collection) { throw new UnsupportedOperationException(); }
 
     @Override
     public E get(int index) {
@@ -152,35 +146,6 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public Iterator<E> iterator() {
-        E[] array = (E[]) toArray();
-        return Arrays.asList(array).iterator();
-    }
-
-    @Override
-    public int lastIndexOf(Object target) {
-        Node node = head;
-        int index = -1;
-        for (int i=0; i<size; i++) {
-            if (equals(target, node.data)) {
-                index = i;
-            }
-            node = node.next;
-        }
-        return index;
-    }
-
-    @Override
-    public ListIterator<E> listIterator() {
-        return null;
-    }
-
-    @Override
-    public ListIterator<E> listIterator(int index) {
-        return null;
-    }
-
-    @Override
     public boolean remove(Object obj) {
         int index = indexOf(obj);
         if (index == -1) {
@@ -218,11 +183,6 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean retainAll(Collection<?> collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public E set(int index, E element) {
         Node node = getNode(index);
         E old = node.data;
@@ -231,40 +191,45 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
+    public boolean retainAll(Collection<?> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public int size() {
         return size;
     }
 
     @Override
-    public List<E> subList(int fromIndex, int toIndex) {
-        if (fromIndex < 0 || toIndex >= size || fromIndex > toIndex) {
-            throw new IndexOutOfBoundsException();
-        }
-        int i = 0;
-        LinkedList<E> list = new LinkedList<E>();
-        for (Node node=head; node != null; node = node.next) {
-            if (i >= fromIndex && i <= toIndex) {
-                list.add(node.data);
-            }
-            i++;
-        }
-        return list;
-    }
+    public List<E> subList(int fromIndex, int toIndex) { throw new UnsupportedOperationException(); }
 
     @Override
-    public Object[] toArray() {
-        Object[] array = new Object[size];
-        int i = 0;
-        for (Node node=head; node != null; node = node.next) {
-            // System.out.println(node);
-            array[i] = node.data;
-            i++;
-        }
-        return array;
-    }
+    public Object[] toArray() { throw new UnsupportedOperationException(); }
 
     @Override
     public <T> T[] toArray(T[] a) {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public Iterator<E> iterator() { throw new UnsupportedOperationException(); }
+
+    @Override
+    public int lastIndexOf(Object target) { throw new UnsupportedOperationException(); }
+
+    @Override
+    public ListIterator<E> listIterator() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIterator<E> listIterator(int index) { throw new UnsupportedOperationException(); }
+
+    @Override
+    public boolean addAll(int index, Collection<? extends E> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> collection) { throw new UnsupportedOperationException(); }
 }

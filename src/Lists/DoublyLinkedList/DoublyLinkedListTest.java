@@ -35,13 +35,23 @@ public class DoublyLinkedListTest {
         dll.add(items.get(500));
         dll.add(items.get(2234));
 
+        //Check if replacing the head element causes issues.
         dll.add(0, items.get(233));
         assertEquals(items.get(233), dll.get(0));
         assertEquals(items.get(500), dll.get(1));
 
+        //Check if replacing another element causes trouble.
         dll.add(2, items.get(2000));
-        //assertEquals(items.get(500), dll.get(1));
+        assertEquals(items.get(2000), dll.get(2));
+        assertEquals(items.get(2234), dll.get(3));
+    }
 
+    @Test
+    public void addAll()
+    {
+        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
+        dll.addAll(items);
+        assertEquals(items.size(), dll.size());
     }
 
 
@@ -119,9 +129,14 @@ public class DoublyLinkedListTest {
         dll.add(items.get(2234));
         dll.add(items.get(0));
 
+        //Check whether fetching the head doesnt cause trouble.
         assertEquals(0, dll.indexOf(items.get(500)));
+        //Check whether a node inbetween doesn't cause trouble.
         assertEquals(1, dll.indexOf(items.get(2234)));
+        //Check whether the fetching the tail doesn't cause trouble.
         assertEquals(2, dll.indexOf(items.get(0)));
+        //Check whether trying to fetch an null object doesn't cause an exception.
+        assertEquals(-1, dll.indexOf(null));
     }
 
     @Test
@@ -140,14 +155,6 @@ public class DoublyLinkedListTest {
         assertFalse(dll.contains(items.get(500)));
         dll.add(items.get(500));
         assertTrue(dll.contains(items.get(500)));
-    }
-
-    @Test
-    public void addAll()
-    {
-        DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
-        dll.addAll(items);
-        assertEquals(items.size(), dll.size());
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
