@@ -13,8 +13,7 @@ public class LinkedListTest {
     private ArrayList<Item> items = new ArrayList<>();
 
     @Before
-    public void initialize()
-    {
+    public void initialize() {
         items = JSONHandler.getItemsArrayList();
         System.out.println("All LEGO items were added to an ids array");
     }
@@ -26,7 +25,7 @@ public class LinkedListTest {
         linkedList.addAll(items);
 
         assertTrue(linkedList.get(0).equals(items.get(0)));
-        assertTrue(linkedList.get(linkedList.size() -1).equals(items.get(items.size() -1)));
+        assertTrue(linkedList.get(linkedList.size() - 1).equals(items.get(items.size() - 1)));
     }
 
     @Test
@@ -48,8 +47,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void addAll()
-    {
+    public void addAll() {
         LinkedList<Object> linkedList = new LinkedList<>();
         linkedList.addAll(items);
         assertEquals(items.size(), linkedList.size());
@@ -97,8 +95,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removeNonExistingObject()
-    {
+    public void removeNonExistingObject() {
         LinkedList<Object> linkedList = new LinkedList<>();
         assertFalse(linkedList.remove(items.get(500)));
     }
@@ -117,7 +114,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void setTest(){
+    public void setTest() {
         LinkedList<Object> linkedList = new LinkedList<>();
         linkedList.add(items.get(500));
         linkedList.add(items.get(2234));

@@ -8,20 +8,20 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class StackTest {
     private ArrayList<Item> items = new ArrayList<>();
 
     @Before
-    public void initialize()
-    {
+    public void initialize() {
         items = JSONHandler.getItemsArrayList();
         System.out.println("All LEGO items were added to an ids array");
     }
 
     @Test
-    public void pushToStack(){
+    public void pushToStack() {
         Stack<Item> stack = new Stack<>();
         stack.push(items.get(500));
         stack.push(items.get(404));
@@ -30,11 +30,11 @@ public class StackTest {
     }
 
     @Test
-    public void peekStack(){
+    public void peekStack() {
         Stack<Item> stack = new Stack<>();
         stack.push(items.get(500));
         stack.push(items.get(404));
-        assertEquals(items.get(404) ,stack.peek());
+        assertEquals(items.get(404), stack.peek());
 
     }
 
@@ -45,16 +45,16 @@ public class StackTest {
     }
 
     @Test
-    public void popStack(){
+    public void popStack() {
         Stack<Item> stack = new Stack<>();
         stack.push(items.get(500));
         stack.push(items.get(404));
-        assertEquals(items.get(404) ,stack.pop());
+        assertEquals(items.get(404), stack.pop());
         assertEquals(items.get(500), stack.peek());
     }
 
     @Test
-    public void search(){
+    public void search() {
         Stack<Item> stack = new Stack<>();
         stack.push(items.get(500));
         stack.push(items.get(404));
@@ -62,7 +62,7 @@ public class StackTest {
     }
 
     @Test
-    public void searchNonExisting(){
+    public void searchNonExisting() {
         Stack<Item> stack = new Stack<>();
         stack.push(items.get(500));
         stack.push(items.get(400));

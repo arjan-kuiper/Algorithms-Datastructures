@@ -1,4 +1,5 @@
 package Lists.BinarySearchTree;
+
 import Main.Item;
 import Main.JSONHandler;
 import org.junit.Before;
@@ -14,17 +15,17 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     private int[] ids;
 
     @Before
-    public void initialize(){
+    public void initialize() {
         items = JSONHandler.getItemsArrayList();
         ids = new int[items.size()];
-        for(int i = 0; i < ids.length; i++){
+        for (int i = 0; i < ids.length; i++) {
             ids[i] = items.get(i).getItemNr();
         }
         System.out.println("All LEGO items were added to an ids array");
     }
 
     @Test
-    public void insert(){
+    public void insert() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         bst.insert(ids[50]);
@@ -35,7 +36,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test(expected = NullPointerException.class)
-    public void delete(){
+    public void delete() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         bst.insert(ids[50]);
@@ -50,7 +51,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void find(){
+    public void find() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         assertFalse(bst.find(ids[62]));
@@ -61,7 +62,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void height(){
+    public void height() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         assertEquals(-1, bst.height());
@@ -78,7 +79,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void countLeaves(){
+    public void countLeaves() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         assertEquals(0, bst.countLeaves());
@@ -87,7 +88,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void width(){
+    public void width() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         assertEquals(0, bst.countLeaves());
@@ -102,7 +103,7 @@ public class BinarySearchTreeTest<T extends Comparable<T>> {
     }
 
     @Test
-    public void clear(){
+    public void clear() {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
         assertFalse(bst.find(ids[89]));

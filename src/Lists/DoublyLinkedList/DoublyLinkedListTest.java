@@ -12,10 +12,8 @@ import static org.junit.Assert.*;
 public class DoublyLinkedListTest {
     private ArrayList<Item> items = new ArrayList<>();
 
-
     @Before
-    public void initialize()
-    {
+    public void initialize() {
         items = JSONHandler.getItemsArrayList();
         System.out.println("All LEGO items were added to an ids array");
     }
@@ -47,13 +45,11 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void addAll()
-    {
+    public void addAll() {
         DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
         dll.addAll(items);
         assertEquals(items.size(), dll.size());
     }
-
 
 
     @Test
@@ -116,8 +112,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void removeNonExistingObject()
-    {
+    public void removeNonExistingObject() {
         DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
         assertFalse(dll.remove(items.get(500)));
     }
@@ -149,8 +144,7 @@ public class DoublyLinkedListTest {
     }
 
     @Test
-    public void contains()
-    {
+    public void contains() {
         DoublyLinkedList<Object> dll = new DoublyLinkedList<>();
         assertFalse(dll.contains(items.get(500)));
         dll.add(items.get(500));

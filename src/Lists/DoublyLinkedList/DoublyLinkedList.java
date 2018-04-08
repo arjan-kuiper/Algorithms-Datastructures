@@ -1,18 +1,17 @@
 package Lists.DoublyLinkedList;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-import Main.Item;
-import Main.JSONHandler;
-
-import java.util.*;
-
-public class DoublyLinkedList<E> implements List<E>{
+public class DoublyLinkedList<E> implements List<E> {
     private Node head;
     private Node tail;
     private int size = 0;
 
 
-    //The Node class is used by the LinkedList to make a 'List' with 'Linked' object.
+    // The Node class is used by the LinkedList to make a 'List' with 'Linked' object.
     // Each of the Node objects holds a pointer to the next Node, if there's one. And holds an Object value as 'data'.
     private class Node {
         public E data;
@@ -24,6 +23,7 @@ public class DoublyLinkedList<E> implements List<E>{
             this.next = null;
             this.prev = prev;
         }
+
         @SuppressWarnings("unused")
         public Node(E data, Node next, Node prev) {
             this.data = data;
@@ -56,7 +56,8 @@ public class DoublyLinkedList<E> implements List<E>{
         } else {
             Node node = head;
             // loop until the last node
-            for ( ; node.next != null; node = node.next) {}
+            for (; node.next != null; node = node.next) {
+            }
             node.next = new Node(element, null, node);
             tail = node.next;
         }
@@ -67,10 +68,9 @@ public class DoublyLinkedList<E> implements List<E>{
 
     @Override
     public void add(int index, E element) {
-        if(index == 0)
-        {
+        if (index == 0) {
             head = new Node(element, head);
-        }else{
+        } else {
             Node prevNode = getNode(index).prev;
             Node cNode = getNode(index);
 
@@ -85,18 +85,16 @@ public class DoublyLinkedList<E> implements List<E>{
     public E remove(int index) {
         E removeable = get(index);
         System.out.println();
-        if(index == 0)
-        {
+        if (index == 0) {
             head = head.next;
             //Previous head being un-linked from head. Will be removed with the Java Clean-up.
-        } else if (size -1 == index)
-        {
+        } else if (size - 1 == index) {
             System.out.println("Echo");
             tail.prev.next = null;
             tail = tail.prev;
         } else {
-            Node prevNode = getNode(index -1);
-            Node nextNode = getNode(index +1);
+            Node prevNode = getNode(index - 1);
+            Node nextNode = getNode(index + 1);
             // The previous Node Object references the next node, and the next node refers to the node of the node of the deleted Node.
             prevNode.next = nextNode;
             nextNode.prev = prevNode;
@@ -118,7 +116,7 @@ public class DoublyLinkedList<E> implements List<E>{
     @Override
     public boolean addAll(Collection<? extends E> collection) {
         boolean flag = true;
-        for (E element: collection) {
+        for (E element : collection) {
             flag &= add(element);
         }
         return flag;
@@ -144,16 +142,16 @@ public class DoublyLinkedList<E> implements List<E>{
             throw new IndexOutOfBoundsException();
         }
         // If it is closer to the left range, begin from the head and work towards tail until node has been found.
-        if(size / 2 > index){
+        if (size / 2 > index) {
             Node node = head;
-            for (int i=0; i<index; i++) {
+            for (int i = 0; i < index; i++) {
                 node = node.next;
             }
             return node;
             // If it is closer to the right range, begin from tail and work in direction head until node has been found..
         } else {
             Node node = tail;
-            for (int i= size-1; i > index; i--){
+            for (int i = size - 1; i > index; i--) {
                 node = node.prev;
             }
             return node;
@@ -183,10 +181,8 @@ public class DoublyLinkedList<E> implements List<E>{
 
     @Override
     public int indexOf(Object target) {
-        for(int i = 0; i < size; i++)
-        {
-            if(equals(target, getNode(i).data))
-            {
+        for (int i = 0; i < size; i++) {
+            if (equals(target, getNode(i).data)) {
                 return i;
             }
         }

@@ -1,6 +1,9 @@
 package Lists.LinkedList;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /*
     The LinkedList class is which is held together via Node objects.
@@ -25,6 +28,7 @@ public class LinkedList<E> implements List<E> {
             this.data = data;
             this.next = null;
         }
+
         @SuppressWarnings("unused")
         public Node(E data, Node next) {
             this.data = data;
@@ -45,7 +49,8 @@ public class LinkedList<E> implements List<E> {
         } else {
             Node node = head;
             // loop until the last Node object has been found
-            for (; node.next != null; node = node.next) {}
+            for (; node.next != null; node = node.next) {
+            }
             //Give the old 'last' Node a reference to a new Node
             node.next = new Node(element);
         }
@@ -56,13 +61,12 @@ public class LinkedList<E> implements List<E> {
     @Override
     public void add(int index, E element) {
         size++;
-        if(index == 0)
-        {
+        if (index == 0) {
             // First Node, set as head reference.
             head = new Node(element, head);
-        }else{
+        } else {
             //Edit the link of the Node in front to point to the newly created one. Let the new node point to the Node object it replaced.
-            getNode(index -1).next = new Node(element, getNode(index));
+            getNode(index - 1).next = new Node(element, getNode(index));
         }
 
     }
@@ -70,7 +74,7 @@ public class LinkedList<E> implements List<E> {
     @Override
     public boolean addAll(Collection<? extends E> collection) {
         boolean flag = true;
-        for (E element: collection) {
+        for (E element : collection) {
             flag &= add(element);
         }
         return flag;
@@ -95,7 +99,9 @@ public class LinkedList<E> implements List<E> {
         return node.data;
     }
 
-    /** Returns the node at the given index.
+    /**
+     * Returns the node at the given index.
+     *
      * @param index
      * @return
      */
@@ -104,7 +110,7 @@ public class LinkedList<E> implements List<E> {
             throw new IndexOutOfBoundsException();
         }
         Node node = head;
-        for (int i=0; i<index; i++) {
+        for (int i = 0; i < index; i++) {
             node = node.next;
         }
         return node;
@@ -113,10 +119,8 @@ public class LinkedList<E> implements List<E> {
     @Override
     public int indexOf(Object target) {
         // Iterate over the nodes by index to check whether it's data Object equals the one's index we're looking for.
-        for(int i = 0; i < size; i++)
-        {
-            if(equals(target, getNode(i).data))
-            {
+        for (int i = 0; i < size; i++) {
+            if (equals(target, getNode(i).data)) {
                 // First found Object match. Return it's index.
                 return i;
             }
@@ -125,8 +129,9 @@ public class LinkedList<E> implements List<E> {
         return -1;
     }
 
-    /** Checks whether an element of the array is the target.
-     *
+    /**
+     * Checks whether an element of the array is the target.
+     * <p>
      * Handles the special case that the target is null.
      *
      * @param target
@@ -159,12 +164,11 @@ public class LinkedList<E> implements List<E> {
     public E remove(int index) {
         E removeable = get(index);
 
-        if(index == 0)
-        {
+        if (index == 0) {
             head = head.next;
             //Previous head being un-linked from head. Will be removed with the Java Clean-up.
-        }else{
-            Node prevNode = getNode(index -1);
+        } else {
+            Node prevNode = getNode(index - 1);
             // The previous Node Object references the next node, and the next node refers to the node of the node of the deleted Node.
             prevNode.next = prevNode.next.next;
         }
@@ -176,7 +180,7 @@ public class LinkedList<E> implements List<E> {
     @Override
     public boolean removeAll(Collection<?> collection) {
         boolean flag = true;
-        for (Object obj: collection) {
+        for (Object obj : collection) {
             flag &= remove(obj);
         }
         return flag;
@@ -201,10 +205,14 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public List<E> subList(int fromIndex, int toIndex) { throw new UnsupportedOperationException(); }
+    public List<E> subList(int fromIndex, int toIndex) {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
-    public Object[] toArray() { throw new UnsupportedOperationException(); }
+    public Object[] toArray() {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public <T> T[] toArray(T[] a) {
@@ -212,10 +220,14 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public Iterator<E> iterator() { throw new UnsupportedOperationException(); }
+    public Iterator<E> iterator() {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
-    public int lastIndexOf(Object target) { throw new UnsupportedOperationException(); }
+    public int lastIndexOf(Object target) {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public ListIterator<E> listIterator() {
@@ -223,7 +235,9 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public ListIterator<E> listIterator(int index) { throw new UnsupportedOperationException(); }
+    public ListIterator<E> listIterator(int index) {
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public boolean addAll(int index, Collection<? extends E> collection) {
@@ -231,5 +245,7 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean containsAll(Collection<?> collection) { throw new UnsupportedOperationException(); }
+    public boolean containsAll(Collection<?> collection) {
+        throw new UnsupportedOperationException();
+    }
 }

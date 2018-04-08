@@ -15,14 +15,12 @@ import java.util.ArrayList;
 public final class JSONHandler {
 
     // Make it inaccessable
-    private JSONHandler()
-    {
+    private JSONHandler() {
         //Unavailable
     }
 
     // Static function to be called to generate the Main.Item ArrayList collection.
-    public static ArrayList<Item> getItemsArrayList()
-    {
+    public static ArrayList<Item> getItemsArrayList() {
         // Fetch the file form the 'res' folder & create a parser in order to separate the data in the file.
         String url = JSONHandler.class.getResource("../LEGO_DATASET.json").getPath();
         JSONParser parser = new JSONParser();
@@ -32,16 +30,15 @@ public final class JSONHandler {
         try {
             JSONArray dataSet = (JSONArray) parser.parse(new FileReader(url));
             // Iterate over every item in the JSON array.
-            for(Object item : dataSet)
-            {
-                JSONObject obj = (JSONObject)item;
+            for (Object item : dataSet) {
+                JSONObject obj = (JSONObject) item;
                 // Add a new instance of Main.Item to the items collection.
                 // The constructor of Main.Item will take care of the logic.
-                try{
+                try {
                     int itemId = Integer.parseInt((String.valueOf(obj.get("Item_Number"))));
                     items.add(new Item(obj));
                     //System.out.println(obj.get("Name") + "  Has been added.");
-                }catch(Exception e){
+                } catch (Exception e) {
                     //System.out.println(obj.get("Name") + "  Skipped (Invalid ID).");
                 }
             }

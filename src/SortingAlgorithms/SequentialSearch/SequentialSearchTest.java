@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SequentialSearchTest {
 
@@ -16,11 +16,10 @@ public class SequentialSearchTest {
     private int[] ids;
 
     @Before
-    public void initialize()
-    {
+    public void initialize() {
         items = JSONHandler.getItemsArrayList();
         ids = new int[items.size()];
-        for(int i = 0; i < ids.length; i++){
+        for (int i = 0; i < ids.length; i++) {
             ids[i] = items.get(i).getItemNr();
         }
         System.out.println("All LEGO items were added to an ids array");

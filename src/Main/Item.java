@@ -23,62 +23,95 @@ public class Item {
     private String availability;
 
     // Constructor to set the values of certain items.
-    public Item(JSONObject item)
-    {
+    public Item(JSONObject item) {
         this.itemNr = Integer.parseInt(String.valueOf(item.get("Item_Number")));
-        this.itemName = (String)item.get("Name");
+        this.itemName = (String) item.get("Name");
         this.year = Integer.parseInt(String.valueOf(item.get("Year")));
-        this.theme = (String)item.get("Theme");
+        this.theme = (String) item.get("Theme");
         this.pieces = checkNAInt(item, "Pieces");
         this.minifigures = checkNAInt(item, "Minifigures");
-        this.imageURL = (String)item.get("Image_URL");
+        this.imageURL = (String) item.get("Image_URL");
         this.GBP = checkPrice(item, "GBP_MSRP");
         this.USD = checkPrice(item, "CAD_MSRP");
         this.EUR = checkPrice(item, "EUR_MSRP");
-        this.packiging = (String)item.get("Packaging");
-        this.availability = (String)item.get("Availability");
+        this.packiging = (String) item.get("Packaging");
+        this.availability = (String) item.get("Availability");
     }
 
     // Check whether the price is valid. In case a pricing isn't specified (NA) return -1 to indicate it isn't available in that currency.
-    private double checkPrice(JSONObject item, String input)
-    {
+    private double checkPrice(JSONObject item, String input) {
         String fetchedVal = String.valueOf(item.get(input));
-        if(fetchedVal.equals("NA"))
-        {
+        if (fetchedVal.equals("NA")) {
             // Return -1 if a pricing isn't available for the selected currency.
             return -1;
-        }else{
+        } else {
             return Double.parseDouble(fetchedVal);
         }
     }
 
     // Check whether the field actually is an Integer value.
-    private int checkNAInt(JSONObject item, String input)
-    {
+    private int checkNAInt(JSONObject item, String input) {
         String fetchedVal = String.valueOf(item.get(input));
-        if(fetchedVal.equals("NA"))
-        {
+        if (fetchedVal.equals("NA")) {
             // If not available, return an amount of 0.
             return 0;
-        }else{
+        } else {
             return Integer.parseInt(fetchedVal);
         }
     }
 
 
     // Getter methods
-    public int getItemNr(){ return itemNr; }
-    public String getItemName() { return itemName; }
-    public int getYear() { return year; }
-    public String getTheme() { return theme; }
-    public int getPieces() { return pieces; }
-    public int getMinifigures() { return minifigures; }
-    public String getImageURL() { return imageURL; }
-    public double getGBP() { return GBP; }
-    public double getUSD() { return USD; }
-    public double getCAD() { return CAD; }
-    public double getEUR() { return EUR; }
-    public String getPackiging() { return packiging; }
-    public String getAvailability() { return availability; }
+    public int getItemNr() {
+        return itemNr;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public int getPieces() {
+        return pieces;
+    }
+
+    public int getMinifigures() {
+        return minifigures;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public double getGBP() {
+        return GBP;
+    }
+
+    public double getUSD() {
+        return USD;
+    }
+
+    public double getCAD() {
+        return CAD;
+    }
+
+    public double getEUR() {
+        return EUR;
+    }
+
+    public String getPackiging() {
+        return packiging;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
 
 }
