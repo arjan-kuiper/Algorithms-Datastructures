@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class BinarySearchTreeTest<T extends Comparable<T>> {
+public class BinarySearchTreeTest {
 
     private ArrayList<Item> items = new ArrayList<>();
     private int[] ids;
