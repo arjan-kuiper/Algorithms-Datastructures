@@ -5,8 +5,8 @@
 - [x] DoublyLinkedList TEST
 - [X] LinkedList
 - [X] LinkedList TEST
-- [ ] Queue
-- [ ] Queue TEST
+- [x] Queue
+- [x] Queue TEST
 - [x] Stack 
 - [x] Stack TEST
 - [x] BinarySearch
@@ -19,13 +19,8 @@
 - [x] QuickSort TEST
 - [x] SequentialSearch
 - [x] SequentialSearch TEST
-- [ ] OPTIONEEL - MinMax
-- [ ] OPTIONEEL - MinMax TEST
 
-
-# Required Ant build options
-- [ ] Ant Build file
-- [ ] Ant Library references
-- [ ] Ant auto-compile / run tests
-- [ ] Ant auto-run predefined sorting algorithms
-- [ ] Include ref dataset (?)
+# Required Maven build options
+- [x] Maven Build file
+- [x] Maven auto-compile / run tests
+- [x] Include ref dataset
