@@ -1,0 +1,10 @@
+algorithms\SequentialSearchTest.class
+algorithms\QuickSortTest.class
+algorithms\BubbleSortTest.class
+lists\BinarySearchTreeTest.class
+algorithms\BinarySearchTest.class
+algorithms\InsertionSortTest.class
+lists\QueueTest.class
+lists\LinkedListTest.class
+lists\StackTest.class
+lists\DoublyLinkedListTest.class
